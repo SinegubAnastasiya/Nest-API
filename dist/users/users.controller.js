@@ -12,10 +12,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
+exports.UsersController = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
-let AppController = class AppController {
+const users_service_1 = require("./users.service");
+let UsersController = class UsersController {
     constructor(appService) {
         this.appService = appService;
     }
@@ -60,45 +60,45 @@ let AppController = class AppController {
         }
     }
 };
-exports.AppController = AppController;
+exports.UsersController = UsersController;
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Object)
-], AppController.prototype, "getItemDB", null);
+], UsersController.prototype, "getItemDB", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Object)
-], AppController.prototype, "postItemDB", null);
+], UsersController.prototype, "postItemDB", null);
 __decorate([
-    (0, common_1.Put)(':id'),
+    (0, common_1.Put)(":id"),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Object)
-], AppController.prototype, "updateItemDB", null);
+], UsersController.prototype, "updateItemDB", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(":id"),
+    __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Object)
-], AppController.prototype, "deleteItemDB", null);
+], UsersController.prototype, "deleteItemDB", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
+    (0, common_1.Patch)(":id"),
     __param(0, (0, common_1.Body)()),
-    __param(1, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Object, String]),
     __metadata("design:returntype", Object)
-], AppController.prototype, "updateItemPartlyDB", null);
-exports.AppController = AppController = __decorate([
-    (0, common_1.Controller)(),
-    __metadata("design:paramtypes", [app_service_1.AppService])
-], AppController);
-//# sourceMappingURL=app.controller.js.map
+], UsersController.prototype, "updateItemPartlyDB", null);
+exports.UsersController = UsersController = __decorate([
+    (0, common_1.Controller)('/users'),
+    __metadata("design:paramtypes", [users_service_1.UsersService])
+], UsersController);
+//# sourceMappingURL=users.controller.js.map
